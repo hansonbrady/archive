@@ -11,7 +11,7 @@
             background-color: #333333;
             color: #ffffff;
             display: flex;
-            flex-direction: column; /* Use column layout */
+            flex-direction: column;
             min-height: 100vh;
             margin: 0;
             padding: 20px;
@@ -21,8 +21,8 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
-            background-color: #ffffff; /* White background for the table */
-            color: #333333; /* Dark text for the table */
+            background-color: #ffffff;
+            color: #333333;
         }
         th, td {
             border: 1px solid #ddd;
@@ -31,20 +31,28 @@
         }
         th {
             background-color: #f2f2f2;
-            cursor: pointer; /* Indicate sortable columns */
+            cursor: pointer;
         }
         tfoot {
-            margin-top: auto; /* Push footer to the bottom */
+            margin-top: auto;
             text-align: center;
             padding-top: 20px;
         }
         tfoot a {
             color: #ffffff;
         }
+        #searchInput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body>
     <h1>The Hanson Archive</h1>
+
+    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search...">
 
     <table id="fileTable">
         <thead>
@@ -100,6 +108,24 @@
     </tfoot>
 
     <script>
+        function searchTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("fileTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 1; i < tr.length; i++) {
+                tr[i].style.display = "none";
+                td = tr[i].getElementsByTagName("td");
+                for (var j = 0; j < td.length; j++) {
+                    if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                        break;
+                    }
+                }
+            }
+        }
+
         function sortTable(n) {
             let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
             table = document.getElementById("fileTable");
