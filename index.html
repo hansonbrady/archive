@@ -46,7 +46,7 @@
         function handleCredentialResponse(response) {
             const token = response.credential;
             // Send the token to the server for verification
-            fetch('verify-google-token.php', {
+            fetch('/verify-google-token.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
