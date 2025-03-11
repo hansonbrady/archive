@@ -45,8 +45,8 @@
     <script>
         function handleCredentialResponse(response) {
             const token = response.credential;
-            // Send the token to the server for verification
-            fetch('/verify-google-token.php', {
+            // Send the token to the Netlify function for verification
+            fetch('/.netlify/functions/verify-google-token', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -55,11 +55,16 @@
             })
             .then(response => response.json())
             .then(data => {
+                console.log(data); // Debugging
                 if (data.success) {
                     window.location.href = 'archive.html';
                 } else {
                     alert('Login failed: ' + (data.error || 'Unknown error'));
                 }
+            })
+            .catch(error => {
+                console.error("Fetch error:", error);
+                alert('An unexpected error occurred. Please try again.');
             });
         }
 
