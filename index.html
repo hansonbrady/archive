@@ -3,21 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>The Hanson Archive</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: sans-serif;
+            font-size: 16px;
+            background-color: #333333;
+            color: #ffffff; /* Added white text for better contrast */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
+            min-height: 100vh; /* Use min-height for mobile responsiveness */
+            margin: 0; /* Remove default margin */
+            padding: 20px; /* Add padding for mobile screens */
+            box-sizing: border-box; /* Include padding in element's total width and height */
         }
         .login-container {
-            background-color: #fff;
+            background-color: #ffffff;
+            color: #333333; /* Dark text on white background */
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 90%; /* Responsive width */
+            max-width: 400px; /* Maximum width for larger screens */
+        }
+        .login-container h2 {
+            text-align: center;
         }
     </style>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
@@ -45,7 +56,6 @@
     <script>
         function handleCredentialResponse(response) {
             const token = response.credential;
-            // Send the token to the Netlify function for verification
             fetch('/.netlify/functions/verify-google-token', {
                 method: 'POST',
                 headers: {
@@ -55,7 +65,7 @@
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data); // Debugging
+                console.log(data);
                 if (data.success) {
                     window.location.href = 'archive.html';
                 } else {
