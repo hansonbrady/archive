@@ -25,6 +25,32 @@
                     <p class="disclaimer">Browsing these links is at your own risk. Use a VPN for added security.</p>
                 </div>
             </li>
+            <li class="dropdown">
+                <a href="#">Streams</a>
+                <div class="dropdown-content">
+                    <a href="https://streameastapp.to/">StreamEast</a>
+                    <a href="https://www.vipbox.lc/">VipBox</a>
+                    <a href="https://buffstreams.nl/">BuffStreams</a>
+                    <a href="https://methstreams.cx/">MethStreams</a>
+                    <a href="https://watchkobestreams.info/">KobeStreams</a>
+                    <a href="https://mmabite.net/">MMABite</a>
+                    <p class="disclaimer">Browsing these links is at your own risk. Use a VPN for added security.</p>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Deals</a>
+                <div class="dropdown-content">
+                    <a href="https://www.humblebundle.com/">HumbleBundle</a>
+                    <a href="https://www.stacksocial.com/">StackSocial</a>
+                    <a href="https://www.g2a.com/">G2A</a>
+                    <a href="https://www.cdkeys.com/">CDKeys</a>
+                    <a href="https://www.greenmangaming.com/">GreenManGaming</a>
+                    <a href="https://www.kinguin.net/">Kinguin</a>
+                    <a href="https://www.fanatical.com/en/on-sale">Fanatical</a>
+                    <p class="disclaimer">These are sites that provide discounts on stuff like games, software, hardware, etc.</p>
+                </div>
+            </li>
+            <li><button id="logoutButton">Logout</button></li>
         </ul>
     </nav>
 
@@ -98,62 +124,6 @@
     <tfoot>
         <p>&copy; 2025 The Hanson Family. All rights reserved. <a href="mailto:463churchroad@thehansons.ca">Contact Us</a></p>
     </tfoot>
-
-    <script>
-        function searchTable() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("searchInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("fileTable");
-            tr = table.getElementsByTagName("tr");
-            for (i = 1; i < tr.length; i++) {
-                tr[i].style.display = "none";
-                td = tr[i].getElementsByTagName("td");
-                for (var j = 0; j < td.length; j++) {
-                    if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                        break;
-                    }
-                }
-            }
-        }
-
-        function sortTable(n) {
-            let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-            table = document.getElementById("fileTable");
-            switching = true;
-            dir = "asc";
-            while (switching) {
-                switching = false;
-                rows = table.rows;
-                for (i = 1; i < (rows.length - 1); i++) {
-                    shouldSwitch = false;
-                    x = rows[i].getElementsByTagName("TD")[n];
-                    y = rows[i + 1].getElementsByTagName("TD")[n];
-                    if (dir == "asc") {
-                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                            shouldSwitch = true;
-                            break;
-                        }
-                    } else if (dir == "desc") {
-                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                            shouldSwitch = true;
-                            break;
-                        }
-                    }
-                }
-                if (shouldSwitch) {
-                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                    switching = true;
-                    switchcount++;
-                } else {
-                    if (switchcount == 0 && dir == "asc") {
-                        dir = "desc";
-                        switching = true;
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
