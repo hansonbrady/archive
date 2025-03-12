@@ -58,19 +58,23 @@
 
     <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search...">
 
+    <p id="noResultsMessage" style="display: none;">No matching results found.</p>
+
     <table id="fileTable">
         <thead>
             <tr>
-                <th onclick="sortTable(0)">File Name</th>
-                <th onclick="sortTable(1)">Download</th>
-                <th onclick="sortTable(2)">File Size</th>
-                <th onclick="sortTable(3)">Notes</th>
-                <th onclick="sortTable(4)">File Type</th>
-                <th onclick="sortTable(5)">Upload Date</th>
+                <th onclick="sortTable(0)">Icon</th>
+                <th onclick="sortTable(1)">File Name</th>
+                <th onclick="sortTable(2)">Download</th>
+                <th onclick="sortTable(3)">File Size</th>
+                <th onclick="sortTable(4)">Notes</th>
+                <th onclick="sortTable(5)">File Type</th>
+                <th onclick="sortTable(6)">Upload Date</th>
             </tr>
         </thead>
         <tbody>
             <tr>
+                <td><img src="icons/exe.png" alt="EXE Icon" class="file-icon"></td>
                 <td>TorBrowser</td>
                 <td><a href="https://www.torproject.org/download/">Click Here for latest online version</a><br><a href="files/tor-browser-windows-x86_64-portable-14.0.7.exe">Archived Version v14.0.7 (Windows x64)</a></td>
                 <td>37.4 MB</td>
@@ -79,6 +83,7 @@
                 <td>2025-03-12</td>
             </tr>
             <tr>
+                <td><img src="icons/exe.png" alt="EXE Icon" class="file-icon"></td>
                 <td>qBitTorrent</td>
                 <td><a href="https://www.qbittorrent.org/download">Click Here for latest online version</a><br><a href="files/qbittorrent_5.0.4_x64_setup.exe">Archived Version v5.0.4 (Windows x64)</a></td>
                 <td>37.4 MB</td>
@@ -87,6 +92,7 @@
                 <td>2025-03-12</td>
             </tr>
             <tr>
+                <td><img src="icons/exe.png" alt="EXE Icon" class="file-icon"></td>
                 <td>Bleachbit</td>
                 <td><a href="https://www.bleachbit.org/download">Click Here for latest online version</a><br><a href="files/BleachBit-4.6.2-setup.exe">Archived Version v4.6.2 (Windows x64)</a></td>
                 <td>11.6 MB</td>
@@ -95,6 +101,7 @@
                 <td>2025-03-11</td>
             </tr>
             <tr>
+                <td><img src="icons/pdf.png" alt="PDF Icon" class="file-icon"></td>
                 <td>SEO Planning Template</td>
                 <td><a href="files/SEO Planning Template.pdf">Download</a></td>
                 <td>371 KB</td>
@@ -103,6 +110,7 @@
                 <td>2025-03-12</td>
             </tr>
             <tr>
+                <td><img src="icons/pdf.png" alt="PDF Icon" class="file-icon"></td>
                 <td>How to Optimize Your Website Speed</td>
                 <td><a href="files/How to Optimize Your Webite Speed.pdf">Download</a></td>
                 <td>284 KB</td>
@@ -111,6 +119,7 @@
                 <td>2025-03-12</td>
             </tr>
             <tr>
+                <td><img src="icons/pdf.png" alt="PDF Icon" class="file-icon"></td>
                 <td>Above Black, Project Preserve Destiny by Dan Sherman</td>
                 <td><a href="files/Above Black, Project Preserve Destiny - Dan Sherman.pdf">Download</a></td>
                 <td>550 KB</td>

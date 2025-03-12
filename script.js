@@ -5,34 +5,30 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function searchTable() {
-    var input, filter, table, tr, td, i, j, txtValue, found;
+    var input, filter, table, tr, td, i, txtValue, found;
     input = document.getElementById("searchInput");
     filter = input.value.toUpperCase();
     table = document.getElementById("fileTable");
     tr = table.getElementsByTagName("tr");
-    found = false; // Add found variable
+    found = false;
 
     for (i = 1; i < tr.length; i++) {
         tr[i].style.display = "none";
-        td = tr[i].getElementsByTagName("td");
-        for (j = 0; j < td.length; j++) {
-            txtValue = td[j].textContent || td[j].innerText;
+        td = tr[i].getElementsByTagName("td")[0]; // Only check the first column (File Name)
+        if (td) {
+            txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 tr[i].style.display = "";
-                found = true; // Set found to true
-                // Highlight search terms
-                td[j].innerHTML = txtValue.replace(new RegExp(filter, "gi"), function(match) {
+                found = true;
+                td.innerHTML = txtValue.replace(new RegExp(filter, "gi"), function(match) {
                     return '<span class="highlight">' + match + '</span>';
                 });
-                break;
             } else {
-                // Remove highlight from previous searches
-                td[j].innerHTML = txtValue;
+                td.innerHTML = txtValue; // Remove highlight if not found
             }
         }
     }
 
-    // Show/hide no results message
     if (found) {
         document.getElementById("noResultsMessage").style.display = "none";
     } else {
