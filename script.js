@@ -1,26 +1,42 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('logoutButton').addEventListener('click', function() {
-        // Clear client-side data (e.g., cookies, localStorage) if needed.
-        // Example: localStorage.removeItem('userToken');
-        window.location.href = 'login.html'; // Redirect to login page
+        window.location.href = 'login.html';
     });
 });
 
 function searchTable() {
-    var input, filter, table, tr, td, i, txtValue;
+    var input, filter, table, tr, td, i, j, txtValue, found;
     input = document.getElementById("searchInput");
     filter = input.value.toUpperCase();
     table = document.getElementById("fileTable");
     tr = table.getElementsByTagName("tr");
+    found = false; // Add found variable
+
     for (i = 1; i < tr.length; i++) {
         tr[i].style.display = "none";
         td = tr[i].getElementsByTagName("td");
-        for (var j = 0; j < td.length; j++) {
-            if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+        for (j = 0; j < td.length; j++) {
+            txtValue = td[j].textContent || td[j].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 tr[i].style.display = "";
+                found = true; // Set found to true
+                // Highlight search terms
+                td[j].innerHTML = txtValue.replace(new RegExp(filter, "gi"), function(match) {
+                    return '<span class="highlight">' + match + '</span>';
+                });
                 break;
+            } else {
+                // Remove highlight from previous searches
+                td[j].innerHTML = txtValue;
             }
         }
+    }
+
+    // Show/hide no results message
+    if (found) {
+        document.getElementById("noResultsMessage").style.display = "none";
+    } else {
+        document.getElementById("noResultsMessage").style.display = "block";
     }
 }
 

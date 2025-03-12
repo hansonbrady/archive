@@ -75,8 +75,8 @@ table {
     margin-bottom: 20px;
     background-color: #ffffff;
     color: #333333;
-    max-width: 100%; /* Add max-width */
-    overflow-x: auto; /* Add overflow-x */
+    max-width: 100%;
+    overflow-x: auto;
 }
 
 th,
@@ -84,12 +84,20 @@ td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    word-wrap: break-word; /* Add word-wrap */
+    word-wrap: break-word;
 }
 
 th {
     background-color: #f2f2f2;
     cursor: pointer;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #e0e0e0;
 }
 
 tfoot {
@@ -119,7 +127,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -149,40 +156,39 @@ a:hover {
 }
 
 @media (max-width: 480px) {
-
     table, thead, tbody, th, td, tr {
-		display: block;
-	}
+        display: block;
+    }
 
-	thead tr {
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
 
-	tr { border: 1px solid #ccc; }
+    tr { border: 1px solid #ccc; }
 
-	td {
-		border: none;
-		border-bottom: 1px solid #eee;
-		position: relative;
-		padding-left: 50%;
-	}
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
 
-	td:before {
-		position: absolute;
-		top: 6px;
-		left: 6px;
-		width: 45%;
-		padding-right: 10px;
-		white-space: nowrap;
-		content: attr(data-label);
-		font-weight: bold;
-	}
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);
+        font-weight: bold;
+    }
 }
 
 #logoutButton {
-    background-color: #f44336; /* Red background */
+    background-color: #f44336;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -191,5 +197,10 @@ a:hover {
 }
 
 #logoutButton:hover {
-    background-color: #d32f2f; /* Darker red on hover */
+    background-color: #d32f2f;
+}
+
+.highlight {
+    background-color: yellow; /* Highlight color */
+    font-weight: bold; /* Make highlighted text bold */
 }
