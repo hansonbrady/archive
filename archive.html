@@ -4,114 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Hanson Archive</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            font-size: 16px;
-            background-color: #333333;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        nav {
-            background-color: #444444;
-            padding: 10px 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            width: 100%;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-        nav li {
-            margin-right: 20px;
-            position: relative;
-        }
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 5px 10px;
-            display: block;
-        }
-        nav a:hover {
-            background-color: #555555;
-            border-radius: 3px;
-        }
-        nav .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #444444;
-            min-width: 250px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            padding: 10px;
-        }
-        nav .dropdown-content a {
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        nav .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        nav .disclaimer {
-            font-size: 12px;
-            color: #aaa;
-            margin-top: 10px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-            background-color: #ffffff;
-            color: #333333;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-            cursor: pointer;
-        }
-        tfoot {
-            margin-top: auto;
-            text-align: center;
-            padding-top: 20px;
-        }
-        tfoot a {
-            color: #ffffff;
-        }
-        #searchInput {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="https://www.plex.tv/">TV</a></li>
-            <li><a href="https://drive.google.com/drive/folders/1esRX4gVczE9odjqkjUTIDM_ijNyWERuL?usp=drive_link">G-Drive</a></li>
-            <li><a href="https://mail.ionos.ca">Mail</a></li>
+            <li><a href="https://www.plex.tv/">Media Hub</a></li>
+            <li><a href="https://drive.google.com/drive/folders/1esRX4gVczE9odjqkjUTIDM_ijNyWERuL?usp=drive_link">H-Drive</a></li>
+            <li><a href="https://mail.ionos.ca">H-Mail</a></li>
             <li class="dropdown">
-                <a href="#">Argh!</a>
+                <a href="#">Arrrgh!</a>
                 <div class="dropdown-content">
                     <a href="https://steamrip.com/">SteamRIP</a>
                     <a href="https://steamunlocked.net/">SteamUnlocked</a>
                     <a href="https://en.rarbg-official.com/">RARBG</a>
                     <a href="https://psa.wf/">PSARips</a>
                     <a href="https://cracksurl.com/">CracksURL</a>
+                    <a href="https://www.l337.to/">L337</a>
+                    <a href="https://idope.lol/">iDope</a>
                     <p class="disclaimer">Browsing these links is at your own risk. Use a VPN for added security.</p>
                 </div>
             </li>
@@ -126,40 +36,61 @@
         <thead>
             <tr>
                 <th onclick="sortTable(0)">File Name</th>
-                <th onclick="sortTable(1)">File Size</th>
-                <th onclick="sortTable(2)">Upload Date</th>
+                <th onclick="sortTable(1)">Download</th>
+                <th onclick="sortTable(2)">File Size</th>
                 <th onclick="sortTable(3)">Notes</th>
                 <th onclick="sortTable(4)">File Type</th>
+                <th onclick="sortTable(5)">Upload Date</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><a href="files/BleachBit-4.6.2-setup.exe">Bleachbit</a></td>
+                <td>TorBrowser</td>
+                <td><a href="https://www.torproject.org/download/">Click Here for latest online version</a><br><a href="files/tor-browser-windows-x86_64-portable-14.0.7.exe">Archived Version v14.0.7 (Windows x64)</a></td>
+                <td>37.4 MB</td>
+                <td>Internet browser with full encryption capabilities - used for browsing the 'darkweb'</td>
+                <td>EXE (executable file)</td>
+                <td>2025-03-12</td>
+            </tr>
+            <tr>
+                <td>qBitTorrent</td>
+                <td><a href="https://www.qbittorrent.org/download">Click Here for latest online version</a><br><a href="files/qbittorrent_5.0.4_x64_setup.exe">Archived Version v5.0.4 (Windows x64)</a></td>
+                <td>37.4 MB</td>
+                <td>Torrent downloading software</td>
+                <td>EXE (executable file)</td>
+                <td>2025-03-12</td>
+            </tr>
+            <tr>
+                <td>Bleachbit</td>
+                <td><a href="https://www.bleachbit.org/download">Click Here for latest online version</a><br><a href="files/BleachBit-4.6.2-setup.exe">Archived Version v4.6.2 (Windows x64)</a></td>
                 <td>11.6 MB</td>
-                <td>2025-03-11</td>
                 <td>Computer cleaning software</td>
                 <td>EXE (executable file)</td>
+                <td>2025-03-11</td>
             </tr>
             <tr>
-                <td><a href="files/SEO Planning Template.pdf">SEO Planning Template</a></td>
+                <td>SEO Planning Template</td>
+                <td><a href="files/SEO Planning Template.pdf">Download</a></td>
                 <td>371 KB</td>
-                <td>2025-03-12</td>
-                <td>SEO Planning Template in PDF Format</td>
+                <td>SEO Planning Template for websites and other online tools</td>
                 <td>PDF</td>
+                <td>2025-03-12</td>
             </tr>
             <tr>
-                <td><a href="files/How to Optimize Your Webite Speed.pdf">Bleachbit</a></td>
+                <td>How to Optimize Your Website Speed</td>
+                <td><a href="files/How to Optimize Your Webite Speed.pdf">Download</a></td>
                 <td>284 KB</td>
-                <td>2025-03-12</td>
-                <td>PDF on how to optimize your website speed</td>
+                <td>Learn how to optimize your website speed</td>
                 <td>PDF</td>
+                <td>2025-03-12</td>
             </tr>
             <tr>
-                <td><a href="files/Above Black, Project Preserve Destiny - Dan Sherman.pdf">Bleachbit</a></td>
+                <td>Above Black, Project Preserve Destiny by Dan Sherman</td>
+                <td><a href="files/Above Black, Project Preserve Destiny - Dan Sherman.pdf">Download</a></td>
                 <td>550 KB</td>
-                <td>2025-03-12</td>
-                <td>PDF of eBook Above Black by Dan Sherman</td>
+                <td>Aliens! UFOs!</td>
                 <td>PDF (eBook)</td>
+                <td>2025-03-12</td>
             </tr>
         </tbody>
     </table>
